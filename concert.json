@@ -1,0 +1,15 @@
+{
+    "artiest": "NF",
+    "concerten": [
+      {
+        "stad": "Oosterhout",
+        "zaal": "Zaal 1",
+        "tijd": "12-10-2023 19:25"
+      },
+      {
+        "stad": "amsterdam",
+        "zaal": "Zaal 4",
+        "tijd": "13-10-2023 02:00"
+      }
+    ]
+  }

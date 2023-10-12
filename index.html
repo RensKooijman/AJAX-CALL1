@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="texter" type="text">
+    <div id="holder"></div>
+
+    <script>
+        let holder = document.getElementById('texter');
+        holder.addEventListener('input', (event) => {
+            anonymous();
+        });
+
+        function anonymous(){
+            let letters = document.getElementById("texter").value;
+            let xhr = new XMLHttpRequest();
+            let url = "ajaxtest.php?data=" + encodeURIComponent(letters);
+            xhr.open("GET", url, true);
+            xhr.send();
+            xhr.addEventListener("load", () => {
+                let holder = document.getElementById("holder");
+                holder.innerHTML = '';
+                JSON.parse(xhr.responseText).forEach(function(name, index) {
+                    holder.innerHTML += `<div>${name.name}</div>`;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
