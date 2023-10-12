@@ -2,7 +2,7 @@
    header('Access-Control-Allow-Origin: *');
    header('Content-type: application/json');
 
-   $mysqli = new mysqli('localhost', 'root', 'penis', 'friends');
+   $mysqli = new mysqli('localhost', 'root', 'root', 'friends');
    $letters = $mysqli->real_escape_string($_GET["data"]);
    $sql = "SELECT name FROM friend WHERE name LIKE '$letters%'";
    $result = $mysqli->query($sql);
